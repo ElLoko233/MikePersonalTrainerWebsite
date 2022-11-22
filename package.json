@@ -2,10 +2,9 @@
   "name": "miketrainerwebsite",
   "version": "1.0.0",
   "description": "website that helps mike get customers to sign up for his training session and it also helps with managing existing customers.",
-  "main": "tailwind.config.js",
   "scripts": {
-    "build-css": "tailwindcss build ./src/tailwind/styles.css -o ./public/css/tailwind/styles.css",
-    "dev-build-css": "tailwindcss build ./src/tailwind/styles.css -o ./public/css/tailwind/styles.css --watch"
+    "build-css": "tailwindcss -i ./src/tailwind/styles.css -o ./Public/css/tailwind/styles.css",
+    "dev-build-css": "tailwindcss -i ./src/tailwind/styles.css -o ./Public/css/tailwind/styles.css --watch"
   },
   "repository": {
     "type": "git",
