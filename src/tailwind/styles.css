@@ -4,3 +4,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Navigation bar */
+
+    /* styles for active links */
+    nav .active{
+        @apply text-secondary-100 opacity-100;
+    }
+
+    /* styles for opened button */
+    

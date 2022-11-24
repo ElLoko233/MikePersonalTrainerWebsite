@@ -13,12 +13,10 @@
     <meta name="color-scheme" content="light">
 
     <!-- website description-->
-    <meta name="description"
-        content="">
+    <meta name="description" content="">
 
     <!-- website keywords -->
-    <meta name="keywords"
-        content="">
+    <meta name="keywords" content="training, fittness, mike, gym, virgin active, help, pretoria, hillrest, hatfield, affordable, youth, strong, health">
 
     <!-- font cdn -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +29,68 @@
     <title>Home | Mike Trainer</title>
 </head>
 
-<body>
+<body class="bg-secondary-500">
+    <!-- importing jquery -->
+    <script src="./js/jquery/jquery-3.6.1.min.js"></script>
 
-    
+    <!-- adding the custom nav btn -->
+    <script src="./js/custom/nav_btn.js"></script>
+
+    <!--  navigation bar -->
+    <nav class="w-screen bg-primary-500 static top-0 z-50">
+        <!-- contain the links and ensure they are at the center of large screens -->
+        <div class="xl:w-3/4 md:mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
+            
+            <!-- Navbar links toggler -->
+            <div class="w-fit ml-auto flex item-center">
+                <button id="nav-toggler-open" class="w-9 rounded md:hidden hover:shadow" type="button" role="button">
+                    <div id="hotdogNavIcon" class="w-full h-full">
+                        <svg class="w-full h-full text-secondary-500 opacity-80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                            <g transform="rotate(180 8 8)">
+                                <path fill="currentColor" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 7.75Zm0 4a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                </button>
+                <button id="nav-toggler-close" class="w-9 rounded hidden md:hidden hover:shadow" type="button" role="button">
+                    <div id="hotdogNavIcon" class="w-full h-full">
+                        <svg class="w-full h-full text-secondary-500 opacity-80 xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+                            <g transform="rotate(180 7.5 7.5)">
+                                <path fill="currentColor" fill-rule="evenodd" d="M11.782 4.032a.575.575 0 1 0-.813-.814L7.5 6.687L4.032 3.218a.575.575 0 0 0-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 0 0 .814.814L7.5 8.313l3.469 3.469a.575.575 0 0 0 .813-.814L8.313 7.5l3.469-3.468Z" clip-rule="evenodd"/>
+                            </g>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <!-- navigation links -->
+            <div id="navlinks" class="hidden flex md:flex justify-end md:justify-between items-end md:items-center h-screen md:h-fit flex-col-reverse md:flex-row gap-12 md:gap-0">
+                <!-- user control links -->
+                <div class="flex items-end md:items-center justify-between gap-3 flex-col md:flex-row">
+                    <!-- sign up btn -->
+                    <button class="bg-tertiary-500 text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.35rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border border-primary-500 hover:border-secondary-500" role="" type="button">
+                        Sign Up
+                    </button>
+                    <!-- login btn -->
+                    <button class="text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-secondary-500 hover:bg-secondary-100 hover:text-primary-500" role="" type="button">
+                        Login
+                    </button>
+                </div>
+
+                <!-- Website navigation links -->
+                <div class="flex justify-between items-end md:items-center gap-4 md:gap-3 text-secondary-700 opacity-90 flex-col md:flex-row">
+                    <a href="index.html?#" class="active hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Home</a>
+
+                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">About me</a>
+
+                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Contact me</a>
+
+                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Reviews</a>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
 </body>
 
 </html>
