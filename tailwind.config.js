@@ -48,7 +48,8 @@ module.exports = {
 
       fontFamily: {
         "body": ["Fira Sans Condensed", "Fira Sans", "sans-serif"],
-        "heading": ["Rubik", "Ubuntu", "sans-serif"]
+        "heading": ["Rubik", "Ubuntu", "sans-serif"],
+        "bungee": ['Bungee', 'cursive'],
       }
     },
   },
