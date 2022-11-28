@@ -1000,6 +1000,18 @@ nav .active{
   border-width: 1px;
 }
 
+@media (prefers-color-scheme: dark){
+  .dark\:text-secondary-100{
+    --tw-text-opacity: 1;
+    color: rgb(251 251 251 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-secondary-300{
+    --tw-text-opacity: 1;
+    color: rgb(244 244 244 / var(--tw-text-opacity));
+  }
+}
+
 @media (min-width: 768px){
   .md\:order-none{
     order: 0;
