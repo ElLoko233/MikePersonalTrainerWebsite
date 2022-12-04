@@ -531,6 +531,10 @@ video {
   position: relative;
 }
 
+.sticky{
+  position: sticky;
+}
+
 .-top-8{
   top: -2rem;
 }
@@ -968,8 +972,22 @@ video {
   color: rgb(244 244 244 / var(--tw-text-opacity));
 }
 
+.text-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
+.text-blue-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .text-opacity-80{
   --tw-text-opacity: 0.8;
+}
+
+.underline{
+  text-decoration-line: underline;
 }
 
 .placeholder-transparent::-moz-placeholder{
@@ -1103,19 +1121,9 @@ form .invalid-input{
   background-color: transparent;
 }
 
-.invalid\:border-tertiary-700:invalid{
-  --tw-border-opacity: 1;
-  border-color: rgb(125 4 4 / var(--tw-border-opacity));
-}
-
 .invalid\:border-negative:invalid{
   --tw-border-opacity: 1;
   border-color: rgb(245 41 41 / var(--tw-border-opacity));
-}
-
-.invalid\:text-tertiary-400:invalid{
-  --tw-text-opacity: 1;
-  color: rgb(217 57 57 / var(--tw-text-opacity));
 }
 
 .invalid\:text-negative:invalid{
@@ -1142,6 +1150,10 @@ form .invalid-input{
   background-color: rgb(208 7 7 / var(--tw-bg-opacity));
 }
 
+.hover\:font-medium:hover{
+  font-weight: 500;
+}
+
 .hover\:text-primary-500:hover{
   --tw-text-opacity: 1;
   color: rgb(25 25 25 / var(--tw-text-opacity));
@@ -1155,6 +1167,10 @@ form .invalid-input{
 .hover\:text-secondary-100:hover{
   --tw-text-opacity: 1;
   color: rgb(251 251 251 / var(--tw-text-opacity));
+}
+
+.hover\:no-underline:hover{
+  text-decoration-line: none;
 }
 
 .hover\:opacity-100:hover{
@@ -1193,19 +1209,9 @@ form .invalid-input{
   border-color: rgb(245 41 41 / var(--tw-border-opacity));
 }
 
-.focus\:invalid\:border-tertiary-700:invalid:focus{
-  --tw-border-opacity: 1;
-  border-color: rgb(125 4 4 / var(--tw-border-opacity));
-}
-
 .focus\:invalid\:text-negative:invalid:focus{
   --tw-text-opacity: 1;
   color: rgb(245 41 41 / var(--tw-text-opacity));
-}
-
-.focus\:invalid\:ring-tertiary-700:invalid:focus{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(125 4 4 / var(--tw-ring-opacity));
 }
 
 .focus\:invalid\:ring-negative:invalid:focus{
@@ -1414,6 +1420,14 @@ form .invalid-input{
     width: 50%;
   }
 
+  .lg\:w-4\/12{
+    width: 33.333333%;
+  }
+
+  .lg\:w-5\/12{
+    width: 41.666667%;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -1439,12 +1453,6 @@ form .invalid-input{
   .lg\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .lg\:shadow{
-    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 
