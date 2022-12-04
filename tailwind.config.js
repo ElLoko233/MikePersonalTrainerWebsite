@@ -43,7 +43,7 @@ module.exports = {
           900: "#2a0101"
         },
         positive: "#03CEA4",
-        negative: "#760505",
+        negative: "#F52929",
       },
 
       fontFamily: {

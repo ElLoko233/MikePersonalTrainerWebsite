@@ -16,4 +16,13 @@
     }
 
     /* styles for opened button */
-    
+
+/* Form styles */
+
+    /* styles for input */
+    form .invalid-label{
+        @apply text-negative;
+    }
+    form .invalid-input{
+        @apply text-negative border-negative border-[3px];
+    }

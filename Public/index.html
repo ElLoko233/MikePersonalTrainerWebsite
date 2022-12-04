@@ -43,7 +43,7 @@
     <!--  navigation bar -->
     <nav class="w-screen bg-primary-500 fixed z-50">
         <!-- contain the links and ensure they are at the center of large screens -->
-        <div class="xl:w-3/4 mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
+        <div class="xl:w-3/4 max-w-5xl mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
             
             <!-- Navbar links toggler -->
             <div class="w-fit ml-auto flex item-center">
@@ -79,6 +79,10 @@
                     <button class="text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-secondary-500 hover:bg-secondary-100 hover:text-primary-500" role="" type="button">
                         Login
                     </button>
+                    <!-- logout btn -->
+                    <button class="text-secondary-600 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                        Logout
+                    </button>
                 </div>
 
                 <!-- Website navigation links -->
@@ -97,41 +101,92 @@
     </nav>
 
     <!-- content area -->
-    <main>
+    <main class=" pt-28 mb-16 ">
+        <!-- SignUp form --->
+        <div class="p-1 md:p-5 md:px-10 w-screen h-screen lg:h-full lg:w-6/12 max-w-3xl mx-auto my-auto lg:shadow rounded-md">
+            <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
+                Sign Up
+            </p>
+
+            <form action="" id="signup-form" class="p-5 w-full h-full space-y-5">
+                <div class="form flex flex-col md:flex-row gap-12 md:gap-5 items-center justify-between">
+                    <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
+                        <!-- form name -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="text" id="signup-name" required autocomplete="false" name="name" placeholder="Name" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                            <label for="signup-name" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Name</label>
+                        </div>
+
+                        <!-- form surname -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="text" id="signup-surname" required autocomplete="false" name="surname" placeholder="Surname" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                            <label for="signup-surname" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Surname</label>
+                        </div>
+
+                        <!-- form phone number -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="tel" id="signup-tel" required autocomplete="false" name="phone-number" placeholder="Tel No." class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent"> 
+                            <label for="signup-tel" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Phone Number</label>
+                        </div>                   
+                    </div>
+    
+                    <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
+                        <!-- form email -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="email" id="signup-email" required autocomplete="false" name="email" placeholder="Email" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent focus:invalid:text-negative focus:invalid:border-negative focus:invalid:border-[3px]">
+                            <label for="signup-email" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 peer-invalid:peer-focus:text-negative transition-all">Email</label>
+                        </div>
+
+                        <!-- form password -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="password" id="signup-password" required autocomplete="false" name="password" placeholder="Password" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                            <label for="signup-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Password</label>
+                        </div>
+
+                        <!-- form re-password -->
+                        <div class="relative w-full h-full flex flex-col gap-2">
+                            <input type="password" invalid id="signup-re-password" required autocomplete="false" name="re-password" placeholder="Re-enter Passowrd" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                            <label for="signup-re-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Re-enter Passowrd</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- submit btn -->
+                <input id="signup-submit" class="transition-all duration-100 ease-linear text-base lg:text-lg text-secondary-500 opacity-80 hover:opacity-95 bg-primary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 block ml-auto rounded font-heading font-medium" type="submit" value="Submit">
+            </form>
+        </div>
         
     </main>
 
-    TODO::Add state styling for the form input eg. red border if invalid
-
     <!-- footer -->
-    <footer class="bg-primary-500 opacity-95 pt-16">
+    <footer class="bg-primary-500 opacity-95">
         <div class=" xl:w-3/4 mx-auto px-8 pt-5">
             <!-- footer content -->
             <div class="flex gap-12 w-full md:gap-3 md:p-3 flex-col md:flex-row justify-center items-center">
                 <!-- Catch phrase -->
-                <div class="md:mr-12 w-60 md:w-full h-full order-2 md:order-none">
+                <div class="lg:mr-12 w-60 max-w-2xl md:w-full h-full order-2 md:order-none">
                     <img class="opacity-80 w-full h-full font-Bungee" src="./assets/svg/getfitwithmike.svg" alt="get fit with mike svg">
                 </div>
 
                 <!-- email form -->
-                <div class="p-1 w-full md:w-2/3 h-fit shrink md:border-r-4 md:pr-4 border-secondary-500 border-opacity-75 order-3 md:order-none">
+                <div class="p-1 w-full max-w-xl md:w-2/3 h-fit shrink md:border-r-4 md:pr-4 border-secondary-500 border-opacity-75 order-3 md:order-none">
                     <form action="" id="email-form" class="form flex flex-col gap-3 justify-between items-center">
                         <div class="flex gap-3 flex-col lg:flex-row w-full">
                             <!--- name -->
-                            <input required autocomplete ="on" type="text" name="name" id="email-name" placeholder="Name" class="flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 pl-3 placeholder:italic autofill:bg-transparent w-full">
+                            <input required autocomplete ="on" type="text" name="name" id="email-name" placeholder="Name" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9">
     
                             <!-- phone number -->
-                            <input required autocomplete ="on" type="tel" name="phonenumber" id="email-phonenumber" placeholder="Phone Number" class="flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 pl-3 placeholder:italic autofill:bg-transparent w-full">
+                            <input required autocomplete ="on" type="tel" name="phonenumber" id="email-phonenumber" placeholder="Phone Number" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
                         </div>
 
                         <!-- email -->
-                        <input required autocomplete ="on" type="email" name="email" id="email-email" placeholder="Email" class="flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 pl-3 placeholder:italic autofill:bg-transparent w-full">
+                        <input required autocomplete ="on" type="email" name="email" id="email-email" placeholder="Email" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
 
                         <!-- message -->
-                        <textarea required name="message" id="email-message" placeholder="Message" class="flex items-center form-textarea bg-primary-400 opacity-80 rounded text-secondary-500 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 pl-3 placeholder:italic autofill:bg-transparent w-full h-16 lg:h-28 resize-none"></textarea>
+                        <textarea required name="message" id="email-message" placeholder="Message" class="transition-all duration-100 ease-linear flex items-center form-textarea bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-16 lg:h-28 resize-none peer"></textarea>
 
                         <!-- send btn -->
-                        <input id="email-submit" class="text-sm lg:text-base text-primary-500 opacity-80 hover:opacity-90 bg-secondary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 shadow mr-auto rounded lg:rounded-md font-heading font-medium dark:text-secondary-300" type="submit" value="Send">
+                        <input id="email-submit" class="transition-all duration-100 ease-linear text-sm lg:text-base text-primary-500 opacity-80 hover:opacity-95 bg-secondary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 shadow ml-auto rounded lg:rounded-md font-heading font-medium" type="submit" value="Send">
                     </form>
                 </div>
 
@@ -139,7 +194,7 @@
                 <div class="space-y-5 w-fit pb-8 md:pb-1 p-1 font-body shrink order-1 md:order-none border-b-4 md:border-b-0 border-secondary-500 border-opacity-75">
                     <!-- instagram link -->
                     <p>
-                        <a href="" class="flex items-center w-fit text-lg lg:text-base gap-2 opacity-80 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
                             <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
                                 <path fill="currentColor" d="M160 128a32 32 0 1 1-32-32a32.1 32.1 0 0 1 32 32Zm68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56Zm-52 44a48 48 0 1 0-48 48a48 48 0 0 0 48-48Zm16-52a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z"/>
                             </svg>
@@ -149,7 +204,7 @@
 
                     <!-- twitter link -->
                     <p>
-                        <a href="" class="flex items-center w-fit text-lg md:text-base gap-2 opacity-80 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
                             <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/>
                             </svg>
@@ -159,7 +214,7 @@
 
                     <!-- tiktok link -->
                     <p>
-                        <a href="" class="flex items-center w-fit text-lg md:text-base gap-2 opacity-80 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
                             <svg class="w-6 inline"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
                             </svg>
@@ -169,7 +224,7 @@
 
                     <!-- phone link -->
                     <p>
-                        <a href="" class="flex items-center w-fit text-lg md:text-base gap-2 opacity-80 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
                             <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z"/>
                             </svg>
