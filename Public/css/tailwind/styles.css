@@ -719,6 +719,10 @@ video {
   max-width: 28rem;
 }
 
+.max-w-sm{
+  max-width: 24rem;
+}
+
 .shrink{
   flex-shrink: 1;
 }
@@ -973,6 +977,41 @@ video {
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-\[\]{
+  padding-left: ;
+  padding-right: ;
+}
+
+.px-\[20\%\]{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.px-\[10\%\]{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.px-\[100\%\]{
+  padding-left: 100%;
+  padding-right: 100%;
+}
+
+.px-\[1\%\]{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.px-\[5\%\]{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.px-\[4\%\]{
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .pr-3{
@@ -1575,6 +1614,11 @@ form .invalid-input{
 
   .md\:w-4\/12{
     width: 33.333333%;
+  }
+
+  .md\:w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .md\:flex-row{
