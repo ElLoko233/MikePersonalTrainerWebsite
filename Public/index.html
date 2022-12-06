@@ -157,7 +157,7 @@
         </div>
 
         <!-- Login form --->
-        <div class="p-1 md:p-5 md:px-10 w-screen h-screen lg:h-full lg:w-5/12 max-w-3xl mx-auto my-auto rounded-md">
+        <div class="hidden p-1 md:p-5 md:px-10 w-screen h-screen lg:h-full lg:w-5/12 max-w-3xl mx-auto my-auto rounded-md">
             <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
                 Login
             </p>
@@ -188,6 +188,61 @@
                     
                 </div>
             </form>
+        </div>
+
+        <div id="session-manager" class="w-screen h-screen lg:h-full lg:w-8/12 max-w-4xl mx-auto my-auto p-1 md:p-3 lg:p-0 space-y-10">
+            <!-- Session Manager title -->
+            <p class="text-4xl font-heading font-medium opacity-80 tracking-tight">
+                My Sessions
+            </p>
+
+            <!-- session manager dashboard -->
+            <div id="session-dashboard" class="flex flex-col items-center justify-center w-full h-full">
+                <div id="session-dashboard-menu" class="flex flex-col md:flex-row items-center justify-between w-fit md:w-full h-fit gap-5 md:gap-0">
+                    <!-- session manager dashboard navigation -->
+                    <div id="session-dashboard-navigation" class="flex items-center justify-center md:justify-start w-fit h-fit">
+                        <!-- slider helpers -->
+                        <input id="upcomming" type="radio" name="sliderHelper" class="peer/checkbox_upcomming" checked>
+                        <input id="outstanding" type="radio" name="sliderHelper" class="peer/checkbox_outstanding">
+                        <input id="comlpeted" type="radio" name="sliderHelper" class="peer/checkbox_completed">
+
+                        <label for="upcomming"class="relative peer/upcomming order-1 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-l-lg border-r-0 hover:border-r-2 peer-checked/checkbox_upcomming:text-secondary-500 peer-checked/checkbox_upcomming:text-opacity-80 peer-checked/checkbox_upcomming:bg-primary-500 peer-checked/checkbox_upcomming:bg-opacity-90">
+                            <button class="z-10">
+                                Upcomming
+                            </button>
+                        </label>
+
+                        <label for="outstanding" class="relative peer/outstanding order-3 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear z-10 rounded-r-lg border-l-0 hover:border-l-2 peer-checked/checkbox_outstanding:text-secondary-500 peer-checked/checkbox_outstanding:text-opacity-80 peer-checked/checkbox_outstanding:bg-primary-500 peer-checked/checkbox_outstanding:bg-opacity-90">
+                            <button>
+                                Outstanding
+                            </button>               
+                        </label>
+                        
+                        <label for="comlpeted" class="relative peer-hover/upcomming:border-l-0 peer-hover/outstanding:border-r-0 order-2 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear z-10 peer-checked/checkbox_completed:text-secondary-500 peer-checked/checkbox_completed:text-opacity-80 peer-checked/checkbox_completed:bg-primary-500 peer-checked/checkbox_completed:bg-opacity-90">
+                            <button>
+                                Completed
+                            </button>
+                        </label>
+                    </div>
+                    
+                    <!-- button that edit the session dashboard data -->
+                    <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto">
+                        <!-- logout btn -->
+                        <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit md:w-20 rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                            <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                            </svg>Book
+                        </button>
+                    </div>
+                </div>
+
+                <!-- session manager dashbaord data -->
+                <div id="session-dashboard-data" class="w-full h-full p-3 flex gap-5 items-center justify-around">
+
+                </div>
+            </div>
+
+
         </div>
         
     </main>

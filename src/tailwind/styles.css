@@ -26,3 +26,12 @@
     form .invalid-input{
         @apply text-negative border-negative border-[3px];
     }
+
+/* session dashboard styles*/
+
+    /* styles for sessions navigation*/
+        #session-dashboard-navigation input[type="radio"]{
+            display: none;
+        }
+
+        
