@@ -41,7 +41,7 @@
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 
     <!--  navigation bar -->
-    <nav class="w-screen bg-primary-500 fixed z-50">
+    <nav class="w-screen h-fit bg-primary-500 fixed z-50">
         <!-- contain the links and ensure they are at the center of large screens -->
         <div class="xl:w-3/4 max-w-5xl mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
             
@@ -101,9 +101,9 @@
     </nav>
 
     <!-- content area -->
-    <main class=" pt-28 mb-16 ">
+    <main class="py-28 w-screen">
         <!-- SignUp form --->
-        <div class="hidden p-1 md:p-5 md:px-10 w-screen h-screen lg:h-full lg:w-6/12 max-w-3xl mx-auto my-auto rounded-md">
+        <div class="hidden p-1 md:p-5 md:px-10 w-full h-full lg:h-full lg:w-6/12 max-w-3xl mx-auto my-auto rounded-md">
             <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
                 Sign Up
             </p>
@@ -162,7 +162,7 @@
                 Login
             </p>
 
-            <form action="" id="signup-form" class="p-5 w-full h-full">
+            <form action="" id="login-form" class="p-5 w-full h-full">
                 <div class="form flex flex-col gap-12 items-center justify-between">
                     <!-- form email -->
                     <div class="relative w-full h-full flex flex-col gap-2">
@@ -190,14 +190,15 @@
             </form>
         </div>
 
-        <div id="session-manager" class="w-screen h-screen lg:h-full lg:w-8/12 max-w-4xl mx-auto my-auto p-1 md:p-3 lg:p-0 space-y-10">
+        <!-- Session manager -->
+        <div id="session-manager" class="w-full h-full lg:h-full lg:w-8/12 max-w-5xl mx-auto my-auto p-1 md:p-3 lg:p-0 space-y-10">
             <!-- Session Manager title -->
             <p class="text-4xl font-heading font-medium opacity-80 tracking-tight">
                 My Sessions
             </p>
 
             <!-- session manager dashboard -->
-            <div id="session-dashboard" class="flex flex-col items-center justify-center w-full h-full">
+            <div id="session-dashboard" class="flex flex-col items-center justify-center w-full h-full gap-5">
                 <div id="session-dashboard-menu" class="flex flex-col md:flex-row items-center justify-between w-full h-fit gap-5 md:gap-0">
                     <!-- session manager dashboard navigation -->
                     <div id="session-dashboard-navigation" class="flex items-center justify-center md:justify-start w-full h-fit">
@@ -226,29 +227,47 @@
                     </div>
                     
                     <!-- button that edit the session dashboard data -->
-                    <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto">
-                        <!-- logout btn -->
-                        <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit md:w-20 rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                    <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto flex">
+                        <!-- add session btn -->
+                        <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
                             <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
                             </svg>Book
+                        </button>
+
+                        <!-- remove session btn -->
+                        <button class="hidden flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                            <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M5 13v-2h14v2Z"/>
+                            </svg>Unbook
                         </button>
                     </div>
                 </div>
 
                 <!-- session manager dashbaord data -->
-                <div id="session-dashboard-data" class="w-full h-full p-3 flex gap-5 items-center justify-around">
-
+                <div id="session-dashboard-data" class="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
+                    <!-- empty state -->
+                    <div id="empty_state" class="w-full h-full tracking-tighter mt-5 md:mt-20 col-span-full space-y-5 md:space-y-8">
+                        <p class="text-2xl md:text-4xl font-heading text-primary-500 font-medium text-opacity-60 text-center">
+                            No training sessions booked
+                        </p>
+                        <img src="./assets/svg/empty_booking_state.svg" class="block mx-auto w-6/12 md:w-fit opacity-90" alt="illustration of an empty gym">
+                        <p class="text-primary-500 font-heading font-medium md:text-2xl text-center text-opacity-40">
+                            Click on the <span class="inline-flex items-center justify-center text-tertiary-600 opacity-75 transition-all duration-150 ease-linear pr-[0.2rem] md:p-[0.2rem] md:py-[0.01rem] md:pl-0 text-sm md:text-base w-fit rounded font-medium font-heading border-[3px] border-tertiary-600">
+                                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                                </svg>Book</span> button to get started.
+                        </p>
+                    </div>
+                      
                 </div>
             </div>
-
-
         </div>
         
     </main>
 
     <!-- footer -->
-    <footer class="sticky bg-primary-500 opacity-95">
+    <footer class="bg-primary-500 opacity-95 w-screen h-fit">
         <div class=" xl:w-3/4 mx-auto px-8 pt-5">
             <!-- footer content -->
             <div class="flex gap-12 w-full md:gap-3 md:p-3 flex-col md:flex-row justify-center items-center">
