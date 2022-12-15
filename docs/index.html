@@ -30,7 +30,7 @@
     <title>Home | Mike Trainer</title>
 </head>
 
-<body class="bg-secondary-500">
+<body class="bg-secondary-400">
     <!-- importing jquery -->
     <script src="./js/jquery/jquery-3.6.1.min.js"></script>
 
@@ -244,22 +244,229 @@
                     </div>
                 </div>
 
+                <!-- empty state -->
+                <div id="empty_state" class="hidden w-full h-full tracking-tighter mt-5 md:mt-20 col-span-full space-y-5 md:space-y-8">
+                    <p class="text-2xl md:text-4xl font-heading text-primary-500 font-medium text-opacity-60 text-center">
+                        No training sessions booked
+                    </p>
+                    <img src="./assets/svg/empty_booking_state.svg" class="block mx-auto w-6/12 md:w-fit opacity-90" alt="illustration of an empty gym">
+                    <p class="text-primary-500 font-heading font-medium md:text-2xl text-center text-opacity-40">
+                        Click on the <span class="inline-flex items-center justify-center text-tertiary-600 opacity-75 transition-all duration-150 ease-linear pr-[0.2rem] md:p-[0.2rem] md:py-[0.01rem] md:pl-0 text-sm md:text-base w-fit rounded font-medium font-heading border-[3px] border-tertiary-600">
+                            <svg class="w-4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                            </svg>Book</span> button to get started.
+                    </p>
+                </div>
+
                 <!-- session manager dashbaord data -->
-                <div id="session-dashboard-data" class="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
-                    <!-- empty state -->
-                    <div id="empty_state" class="w-full h-full tracking-tighter mt-5 md:mt-20 col-span-full space-y-5 md:space-y-8">
-                        <p class="text-2xl md:text-4xl font-heading text-primary-500 font-medium text-opacity-60 text-center">
-                            No training sessions booked
-                        </p>
-                        <img src="./assets/svg/empty_booking_state.svg" class="block mx-auto w-6/12 md:w-fit opacity-90" alt="illustration of an empty gym">
-                        <p class="text-primary-500 font-heading font-medium md:text-2xl text-center text-opacity-40">
-                            Click on the <span class="inline-flex items-center justify-center text-tertiary-600 opacity-75 transition-all duration-150 ease-linear pr-[0.2rem] md:p-[0.2rem] md:py-[0.01rem] md:pl-0 text-sm md:text-base w-fit rounded font-medium font-heading border-[3px] border-tertiary-600">
-                                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
-                                </svg>Book</span> button to get started.
-                        </p>
+                <div id="session-dashboard-data" class="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 p-2">
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
                     </div>
-                      
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
+                        <!-- Session indicator -->
+                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                        </div>
+
+                        <!-- Session date -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Session Date:
+                            </p>
+                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                12 Oct 22
+                            </p>
+                        </div>
+
+                        <!-- Session time -->
+                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
+                                Start Time:
+                            </p>
+                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
+                                13:05
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
