@@ -27,11 +27,45 @@
         @apply text-negative border-negative border-[3px];
     }
 
-/* session dashboard styles*/
+/* session dashboard styles */
 
-    /* styles for sessions navigation*/
+    /* styles for sessions navigation */
         #session-dashboard-navigation input[type="radio"]{
             display: none;
         }
 
+/*Session booking modal styles */
         
+        /* Session date picker */
+            #modal-week-days ul{
+                @apply flex list-none flex-wrap text-center;
+            }
+
+            #modal-week-days ul li{
+                @apply w-[calc(100%/7)];
+            }
+
+            #modal-week-days #modal-weeks{
+                @apply mb-3 font-heading font-medium text-primary-500 text-opacity-80 md:text-opacity-95 text-sm xl:text-base;
+            }
+
+            #modal-week-days #modal-days li{
+                @apply relative text-xs md:text-sm xl:text-base font-body text-primary-500 text-opacity-75 md:text-opacity-90 hover:text-opacity-95 font-medium mt-3 md:mt-7 cursor-pointer before:rounded-full before:absolute before:w-9 before:h-9 before:hover:bg-primary-500 before:hover:bg-opacity-5 before:hover:shadow-md hover:scale-110 before:left-1/2 before:top-1/2 before:translate-x-[-50%] before:translate-y-[-50%] before:transition-all before:duration-75 before:ease-linear z-[1] before:z-[-1];
+            }
+            #modal-week-days #modal-days .inactive{
+                @apply text-opacity-50 hover:scale-100 font-normal before:hover:bg-transparent before:hover:shadow-none;
+            }
+            #modal-week-days #modal-days .fully-booked{
+                @apply text-opacity-70 before:rounded-full before:absolute before:w-9 before:h-9 before:bg-positive before:hover:shadow-none before:hover:bg-positive before:left-1/2 before:top-1/2 before:bg-opacity-50 before:hover:bg-opacity-50 hover:scale-100 hover:cursor-default;
+            }
+            #modal-week-days #modal-days .selected{
+                @apply before:border-[0.2rem] before:border-tertiary-500 before:hover:bg-transparent before:hover:bg-opacity-100 before:hover:shadow-none;
+            }#modal-week-days #modal-days .today{
+                @apply text-tertiary-500 font-bold underline underline-offset-4 text-base xl:text-lg;
+            }
+
+        /* Session time picker */
+           /* #session-time-picker #session-available-time-picker label{
+                @apply w-full h-fit rounded-md border-2 border-primary-500 p-2;
+            } */
+    
