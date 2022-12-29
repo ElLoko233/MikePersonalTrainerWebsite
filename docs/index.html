@@ -1,560 +1,672 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Broswer Tab image -->
-    <link rel="shortcut icon" href="" />
-
-    <!-- Informs the browser that the webpage supports dark and light mode themes-->
-    <meta name="color-scheme" content="light">
-
-    <!-- website description-->
-    <meta name="description" content="">
-
-    <!-- website keywords -->
-    <meta name="keywords" content="training, fittness, mike, gym, virgin active, help, pretoria, hillrest, hatfield, affordable, youth, strong, health">
-
-    <!-- font cdn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-
-    <!-- Tailwind css -->
-    <link href="./css/tailwind/styles.css" rel="stylesheet">
-
-    <title>Home | Mike Trainer</title>
-</head>
-
-<body class="bg-secondary-400">
-    <!-- importing jquery -->
-    <script src="./js/jquery/jquery-3.6.1.min.js"></script>
-
-    <!-- adding the custom nav btn -->
-    <script src="./js/custom/nav_btn.js"></script>
-
-    <!-- Iconify -->
-    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-
-    <!--  navigation bar -->
-    <nav class="w-screen h-fit bg-primary-500 fixed z-50">
-        <!-- contain the links and ensure they are at the center of large screens -->
-        <div class="xl:w-3/4 max-w-5xl mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
-            
-            <!-- Navbar links toggler -->
-            <div class="w-fit ml-auto flex item-center">
-                <button id="nav-toggler-open" class="w-9 rounded md:hidden hover:shadow" type="button" role="button">
-                    <div id="hotdogNavIcon" class="w-full h-full">
-                        <svg class="w-full h-full text-secondary-500 opacity-80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-                            <g transform="rotate(180 8 8)">
-                                <path fill="currentColor" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 7.75Zm0 4a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"/>
-                            </g>
-                        </svg>
-                    </div>
-                </button>
-                <button id="nav-toggler-close" class="w-9 rounded hidden md:hidden hover:shadow" type="button" role="button">
-                    <div id="hotdogNavIcon" class="w-full h-full">
-                        <svg class="w-full h-full text-secondary-500 opacity-80 xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
-                            <g transform="rotate(180 7.5 7.5)">
-                                <path fill="currentColor" fill-rule="evenodd" d="M11.782 4.032a.575.575 0 1 0-.813-.814L7.5 6.687L4.032 3.218a.575.575 0 0 0-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 0 0 .814.814L7.5 8.313l3.469 3.469a.575.575 0 0 0 .813-.814L8.313 7.5l3.469-3.468Z" clip-rule="evenodd"/>
-                            </g>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-
-            <!-- navigation links -->
-            <div id="navlinks" class="hidden flex md:flex justify-end md:justify-between items-end md:items-center h-screen md:h-fit flex-col-reverse md:flex-row gap-12 md:gap-0">
-                <!-- user control links -->
-                <div class="flex items-end md:items-center justify-between gap-3 flex-col md:flex-row">
-                    <!-- sign up btn -->
-                    <button class="bg-tertiary-500 text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.35rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border border-primary-500 hover:border-secondary-500" role="" type="button">
-                        Sign Up
-                    </button>
-                    <!-- login btn -->
-                    <button class="text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-secondary-500 hover:bg-secondary-100 hover:text-primary-500" role="" type="button">
-                        Login
-                    </button>
-                    <!-- logout btn -->
-                    <button class="text-secondary-600 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
-                        Logout
-                    </button>
-                </div>
-
-                <!-- Website navigation links -->
-                <div class="flex justify-between items-end md:items-center gap-4 md:gap-3 text-secondary-700 opacity-90 flex-col md:flex-row">
-                    <a href="index.html?#" class="active hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Home</a>
-
-                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">About me</a>
-
-                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Contact me</a>
-
-                    <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Reviews</a>
-                </div>
-                
-            </div>
-        </div>
-    </nav>
-
-    <!-- content area -->
-    <main class="py-28 w-screen">
-        <!-- SignUp form --->
-        <div class="hidden p-1 md:p-5 md:px-10 w-full h-full lg:h-full lg:w-6/12 max-w-3xl mx-auto my-auto rounded-md">
-            <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
-                Sign Up
-            </p>
-
-            <form action="" id="signup-form" class="p-5 w-full h-full space-y-5">
-                <div class="form flex flex-col md:flex-row gap-12 md:gap-5 items-center justify-between">
-                    <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
-                        <!-- form name -->
-                        <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="text" id="signup-name" required autocomplete="false" name="name" placeholder="Name" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
-                            <label for="signup-name" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Name</label>
-                        </div>
-
-                        <!-- form surname -->
-                        <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="text" id="signup-surname" required autocomplete="false" name="surname" placeholder="Surname" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
-                            <label for="signup-surname" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Surname</label>
-                        </div>
-
-                        <!-- form phone number -->
-                        <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="tel" id="signup-tel" required autocomplete="false" name="phone-number" placeholder="Tel No." class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent"> 
-                            <label for="signup-tel" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Phone Number</label>
-                        </div>                   
-                    </div>
     
-                    <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Broswer Tab image -->
+        <link rel="shortcut icon" href="" />
+
+        <!-- Informs the browser that the webpage supports dark and light mode themes-->
+        <meta name="color-scheme" content="light">
+
+        <!-- website description-->
+        <meta name="description" content="">
+
+        <!-- website keywords -->
+        <meta name="keywords" content="training, fittness, mike, gym, virgin active, help, pretoria, hillrest, hatfield, affordable, youth, strong, health">
+
+        <!-- font cdn -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+        <!-- Tailwind css -->
+        <link href="./css/tailwind/styles.css" rel="stylesheet">
+
+        <title>Home | Mike Trainer</title>
+    </head>
+
+    <body class="relative bg-secondary-400">
+        <!--  navigation bar -->
+        <nav class="w-full h-fit bg-primary-500 sticky top-0 left-0 z-50">
+            <!-- contain the links and ensure they are at the center of large screens -->
+            <div class="xl:w-3/4 max-w-5xl mx-auto capitalize p-3 font-heading space-y-10 md:space-y-0">
+                
+                <!-- Navbar links toggler -->
+                <div class="w-fit ml-auto flex item-center">
+                    <button id="nav-toggler-open" class="w-9 rounded md:hidden hover:shadow" type="button" role="button">
+                        <div id="hotdogNavIcon" class="w-full h-full">
+                            <svg class="w-full h-full text-secondary-500 opacity-80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                                <g transform="rotate(180 8 8)">
+                                    <path fill="currentColor" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 7.75Zm0 4a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+                    <button id="nav-toggler-close" class="w-9 rounded hidden md:hidden hover:shadow" type="button" role="button">
+                        <div id="hotdogNavIcon" class="w-full h-full">
+                            <svg class="w-full h-full text-secondary-500 opacity-80 xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+                                <g transform="rotate(180 7.5 7.5)">
+                                    <path fill="currentColor" fill-rule="evenodd" d="M11.782 4.032a.575.575 0 1 0-.813-.814L7.5 6.687L4.032 3.218a.575.575 0 0 0-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 0 0 .814.814L7.5 8.313l3.469 3.469a.575.575 0 0 0 .813-.814L8.313 7.5l3.469-3.468Z" clip-rule="evenodd"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- navigation links -->
+                <div id="navlinks" class="hidden flex md:flex justify-end md:justify-between items-end md:items-center h-screen md:h-fit flex-col-reverse md:flex-row gap-12 md:gap-0">
+                    <!-- user control links -->
+                    <div class="flex items-end md:items-center justify-between gap-3 flex-col md:flex-row">
+                        <!-- sign up btn -->
+                        <button class="bg-tertiary-500 text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.35rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border border-primary-500 hover:border-secondary-500" role="" type="button">
+                            Sign Up
+                        </button>
+                        <!-- login btn -->
+                        <button class="text-secondary-100 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-secondary-500 hover:bg-secondary-100 hover:text-primary-500" role="" type="button">
+                            Login
+                        </button>
+                        <!-- logout btn -->
+                        <button class="text-secondary-600 transition-all duration-150 ease-linear opacity-90 hover:opacity-100 p-[0.2rem] text-sm w-20 md:w-24 rounded hover:rounded-none md:font-medium border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                            Logout
+                        </button>
+                    </div>
+
+                    <!-- Website navigation links -->
+                    <div class="flex justify-between items-end md:items-center gap-4 md:gap-3 text-secondary-700 opacity-90 flex-col md:flex-row">
+                        <a href="index.html?#" class="active hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Home</a>
+
+                        <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">About me</a>
+
+                        <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Contact me</a>
+
+                        <a href="#" class="hover:text-secondary-100 hover:opacity-100 transition-colors duration-200 ease-linear border-r-[0.2rem] md:border-0 pr-3 md:pr-0 rounded-sm md:rounded-none">Reviews</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+
+        <!-- content area -->
+        <main class="w-full">
+            
+            <!-- SignUp form --->
+            <div class="hidden md:px-10 py-12 lg:py-20 w-full h-fit lg:w-6/12 max-w-3xl mx-auto my-auto rounded-md">
+                <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
+                    Sign Up
+                </p>
+
+                <form action="" id="signup-form" class="p-5 w-full h-fit space-y-5">
+                    <div class="form flex flex-col md:flex-row gap-12 md:gap-5 items-center justify-between">
+                        <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
+                            <!-- form name -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="text" id="signup-name" required autocomplete="false" name="name" placeholder="Name" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                                <label for="signup-name" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Name</label>
+                            </div>
+
+                            <!-- form surname -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="text" id="signup-surname" required autocomplete="false" name="surname" placeholder="Surname" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                                <label for="signup-surname" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Surname</label>
+                            </div>
+
+                            <!-- form phone number -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="tel" id="signup-tel" required autocomplete="false" name="phone-number" placeholder="Tel No." class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent"> 
+                                <label for="signup-tel" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Phone Number</label>
+                            </div>                   
+                        </div>
+        
+                        <div class="w-full md:w-1/2 h-full flex flex-col items-center justify-between gap-12">
+                            <!-- form email -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="email" id="signup-email" required autocomplete="false" name="email" placeholder="Email" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent focus:invalid:text-negative focus:invalid:border-negative focus:invalid:border-[3px]">
+                                <label for="signup-email" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 peer-invalid:peer-focus:text-negative transition-all">Email</label>
+                            </div>
+
+                            <!-- form password -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="password" id="signup-password" required autocomplete="false" name="password" placeholder="Password" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                                <label for="signup-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Password</label>
+                            </div>
+
+                            <!-- form re-password -->
+                            <div class="relative w-full h-full flex flex-col gap-2">
+                                <input type="password" invalid id="signup-re-password" required autocomplete="false" name="re-password" placeholder="Re-enter Passowrd" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                                <label for="signup-re-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Re-enter Passowrd</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- submit btn -->
+                    <input id="signup-submit" class="transition-all duration-75 ease-linear text-base lg:text-lg text-secondary-500 opacity-80 hover:opacity-95 bg-primary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 block ml-auto rounded font-heading font-medium cursor-pointer" type="submit" value="Submit">
+                </form>
+            </div>
+
+            <!-- Login form --->
+            <div class="hidden md:px-10 py-12 lg:py-20 w-full h-fit lg:w-5/12 max-w-3xl mx-auto my-auto rounded-md">
+                <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
+                    Login
+                </p>
+
+                <form action="" id="login-form" class="p-5 w-full h-fit">
+                    <div class="form flex flex-col gap-12 items-center justify-between">
                         <!-- form email -->
                         <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="email" id="signup-email" required autocomplete="false" name="email" placeholder="Email" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent focus:invalid:text-negative focus:invalid:border-negative focus:invalid:border-[3px]">
-                            <label for="signup-email" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 peer-invalid:peer-focus:text-negative transition-all">Email</label>
+                            <input type="email" id="signup-email" required autocomplete="false" name="email" placeholder="Email" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent ">
+                            <label for="signup-email" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Email</label>
                         </div>
 
                         <!-- form password -->
                         <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="password" id="signup-password" required autocomplete="false" name="password" placeholder="Password" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
+                            <input type="password" id="signup-password" required autocomplete="false" name="password" placeholder="Password" class="form-input peer transition-all duration-75 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
                             <label for="signup-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Password</label>
                         </div>
 
-                        <!-- form re-password -->
-                        <div class="relative w-full h-full flex flex-col gap-2">
-                            <input type="password" invalid id="signup-re-password" required autocomplete="false" name="re-password" placeholder="Re-enter Passowrd" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
-                            <label for="signup-re-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Re-enter Passowrd</label>
+                        <div class="flex justify-between items-center w-full h-full">
+                            <!-- forgot password -->
+                            <a href="" class="font-body text-sm hover:font-medium text-blue-500 underline hover:no-underline opacity-80 hover:opacity-100">
+                                forgot Password
+                            </a>
+
+                            <!-- submit btn -->
+                            <input id="signup-submit" class="transition-all duration-75 ease-linear text-base lg:text-lg text-secondary-500 opacity-80 hover:opacity-95 bg-primary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 block rounded font-heading font-medium cursor-pointer" type="submit" value="Submit">
                         </div>
-                    </div>
-                </div>
-
-                <!-- submit btn -->
-                <input id="signup-submit" class="transition-all duration-100 ease-linear text-base lg:text-lg text-secondary-500 opacity-80 hover:opacity-95 bg-primary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 block ml-auto rounded font-heading font-medium" type="submit" value="Submit">
-            </form>
-        </div>
-
-        <!-- Login form --->
-        <div class="hidden p-1 md:p-5 md:px-10 w-screen h-screen lg:h-full lg:w-5/12 max-w-3xl mx-auto my-auto rounded-md">
-            <p class="text-3xl md:text-4xl font-heading font-bold text-primary-500 opacity-80 tracking-md px-5 mb-6 md:my-8">
-                Login
-            </p>
-
-            <form action="" id="login-form" class="p-5 w-full h-full">
-                <div class="form flex flex-col gap-12 items-center justify-between">
-                    <!-- form email -->
-                    <div class="relative w-full h-full flex flex-col gap-2">
-                        <input type="email" id="signup-email" required autocomplete="false" name="email" placeholder="Email" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent ">
-                        <label for="signup-email" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Email</label>
-                    </div>
-
-                    <!-- form password -->
-                    <div class="relative w-full h-full flex flex-col gap-2">
-                        <input type="password" id="signup-password" required autocomplete="false" name="password" placeholder="Password" class="form-input peer transition-all duration-100 ease-linear form- w-full h-12 flex items-center p-1 px-3 text-opacity-80 text-primary-500 rounded bg-secondary-500 outline-0 ring-0 border-2 border-primary-200 border-opacity-70 focus:border-primary-500 focus:border-opacity-95 autofill:bg-transparent placeholder-transparent">
-                        <label for="signup-password" class="peer-placeholder-shown:text-base font-medium peer-placeholder-shown:opacity-60 text-primary-400 pl-1 absolute -top-8 peer-placeholder-shown:top-2.5 peer-placeholder-shown:left-2 peer-focus:-top-8 peer-focus:left-0 peer-focus:text-lg peer-focus:opacity-85 transition-all">Password</label>
-                    </div>
-
-                    <div class="flex justify-between items-center w-full h-full">
-                        <!-- forgot password -->
-                        <a href="" class="font-body text-sm hover:font-medium text-blue-500 underline hover:no-underline opacity-80 hover:opacity-100">
-                            forgot Password
-                        </a>
-
-                        <!-- submit btn -->
-                        <input id="signup-submit" class="transition-all duration-100 ease-linear text-base lg:text-lg text-secondary-500 opacity-80 hover:opacity-95 bg-primary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 block rounded font-heading font-medium" type="submit" value="Submit">
-                    </div>
-                    
-                </div>
-            </form>
-        </div>
-
-        <!-- Session manager -->
-        <div id="session-manager" class="w-full h-full lg:h-full lg:w-8/12 max-w-5xl mx-auto my-auto p-1 md:p-3 lg:p-0 space-y-10">
-            <!-- Session Manager title -->
-            <p class="text-4xl font-heading font-medium opacity-80 tracking-tight">
-                My Sessions
-            </p>
-
-            <!-- session manager dashboard -->
-            <div id="session-dashboard" class="flex flex-col items-center justify-center w-full h-full gap-5">
-                <div id="session-dashboard-menu" class="flex flex-col md:flex-row items-center justify-between w-full h-fit gap-5 md:gap-0">
-                    <!-- session manager dashboard navigation -->
-                    <div id="session-dashboard-navigation" class="flex items-center justify-center md:justify-start w-full h-fit">
-                        <!-- slider helpers -->
-                        <input id="upcomming" type="radio" name="sliderHelper" class="peer/checkbox_upcomming" checked>
-                        <input id="outstanding" type="radio" name="sliderHelper" class="peer/checkbox_outstanding">
-                        <input id="comlpeted" type="radio" name="sliderHelper" class="peer/checkbox_completed">
-
-                        <label for="upcomming"class="w-full md:w-fit peer/upcomming order-1 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-l-lg border-r-0 hover:border-r-2 peer-checked/checkbox_upcomming:text-secondary-500 peer-checked/checkbox_upcomming:text-opacity-80 peer-checked/checkbox_upcomming:bg-primary-500 peer-checked/checkbox_upcomming:bg-opacity-90">
-                            <button class="z-10">
-                                Upcomming
-                            </button>
-                        </label>
-
-                        <label for="outstanding" class="w-full md:w-fit peer/outstanding order-3 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear z-10 rounded-r-lg border-l-0 hover:border-l-2 peer-checked/checkbox_outstanding:text-secondary-500 peer-checked/checkbox_outstanding:text-opacity-80 peer-checked/checkbox_outstanding:bg-primary-500 peer-checked/checkbox_outstanding:bg-opacity-90">
-                            <button>
-                                Outstanding
-                            </button>               
-                        </label>
                         
-                        <label for="comlpeted" class="w-full md:w-fit peer-hover/upcomming:border-l-0 peer-hover/outstanding:border-r-0 order-2 p-3 px-2 lg:px-5 font-heading text-sm lg:text-md text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear z-10 peer-checked/checkbox_completed:text-secondary-500 peer-checked/checkbox_completed:text-opacity-80 peer-checked/checkbox_completed:bg-primary-500 peer-checked/checkbox_completed:bg-opacity-90">
-                            <button>
-                                Completed
+                    </div>
+                </form>
+            </div>
+
+            <!-- Session manager -->
+            <div id="session-manager" class="hidden w-full h-full lg:h-full lg:w-8/12 max-w-5xl mx-auto py-12 lg:my-20 p-3 lg:p-0 space-y-10">
+                <!-- Session Manager title -->
+                <p class="text-4xl font-heading font-medium opacity-80 tracking-tight">
+                    My Sessions
+                </p>
+
+                <!-- session manager dashboard -->
+                <div id="session-dashboard" class="flex flex-col items-center justify-center w-full h-full gap-5">
+                    <div id="session-dashboard-menu" class="flex flex-col md:flex-row items-center justify-between w-full h-fit gap-5 md:gap-0">
+                        <!-- session manager dashboard navigation -->
+                        <div id="session-dashboard-navigation" class="flex items-center justify-center md:justify-start w-full h-fit">
+                            <!-- slider helpers -->
+                            <input id="upcomming" type="radio" name="sliderHelper" class="peer/checkbox_upcomming" checked>
+                            <input id="outstanding" type="radio" name="sliderHelper" class="peer/checkbox_outstanding">
+                            <input id="comlpeted" type="radio" name="sliderHelper" class="peer/checkbox_completed">
+
+                            <label for="upcomming"class="w-full md:w-fit peer/upcomming order-1 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-l-lg border-r-0 hover:border-r-2 peer-checked/checkbox_upcomming:text-secondary-500 peer-checked/checkbox_upcomming:text-opacity-80 peer-checked/checkbox_upcomming:bg-primary-500 peer-checked/checkbox_upcomming:bg-opacity-90 cursor-pointer">
+                                <button>
+                                    Upcomming
+                                </button>
+                            </label>
+
+                            <label for="outstanding" class="w-full md:w-fit peer/outstanding order-3 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-r-lg border-l-0 hover:border-l-2 peer-checked/checkbox_outstanding:text-secondary-500 peer-checked/checkbox_outstanding:text-opacity-80 peer-checked/checkbox_outstanding:bg-primary-500 peer-checked/checkbox_outstanding:bg-opacity-90 cursor-pointer">
+                                <button>
+                                    Outstanding
+                                </button>               
+                            </label>
+                            
+                            <label for="comlpeted" class="w-full md:w-fit peer-hover/upcomming:border-l-0 peer-hover/outstanding:border-r-0 order-2 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear peer-checked/checkbox_completed:text-secondary-500 peer-checked/checkbox_completed:text-opacity-80 peer-checked/checkbox_completed:bg-primary-500 peer-checked/checkbox_completed:bg-opacity-90 cursor-pointer">
+                                <button>
+                                    Completed
+                                </button>
+                            </label>
+                        </div>
+                        
+                        <!-- button that edit the session dashboard data -->
+                        <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto flex">
+                            <!-- add session btn -->
+                            <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                                <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                                </svg>Book
                             </button>
-                        </label>
+
+                            <!-- remove session btn -->
+                            <button class="hidden flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                                <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M5 13v-2h14v2Z"/>
+                                </svg>Unbook
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- empty state -->
+                    <div id="empty_state" class="hidden w-full h-full tracking-tighter mt-5 md:mt-20 col-span-full space-y-5 md:space-y-8">
+                        <p class="text-2xl md:text-4xl font-heading text-primary-500 font-medium text-opacity-60 text-center">
+                            No training sessions booked
+                        </p>
+                        <img src="./assets/svg/empty_booking_state.svg" class="block mx-auto w-6/12 md:w-fit opacity-90" alt="illustration of an empty gym">
+                        <p class="text-primary-500 font-heading font-medium md:text-2xl text-center text-opacity-40">
+                            Click on the <span class="inline-flex items-center justify-center text-tertiary-600 opacity-75 transition-all duration-150 ease-linear pr-[0.2rem] md:p-[0.2rem] md:py-[0.01rem] md:pl-0 text-sm md:text-base w-fit rounded font-medium font-heading border-[3px] border-tertiary-600">
+                                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                                </svg>Book</span> button to get started.
+                        </p>
+                    </div>
+
+                    <!-- session manager dashbaord data -->
+                    <div id="session-dashboard-data" class="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-5 p-2">
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="outline outline-negative w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200 outline outline-negative shadow-lg">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:shadow-md group transition-all linear cursor-pointer">
+                            <!-- Session indicator -->
+                            <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
+                            </div>
+
+                            <!-- Session date -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Session Date:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    12 Oct 22
+                                </p>
+                            </div>
+
+                            <!-- Session time -->
+                            <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
+                                <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 group-hover:text-opacity-70 text-sm md:text-base lg:text-lg">
+                                    Start Time:
+                                </p>
+                                <p class="font-body font-bold text-primary-500 text-opacity-70 group-hover:text-opacity-80 text-3xl lg:text-4xl">
+                                    13:05
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Session booking -->
+            <div id="session-booking-screen" class="w-full h-full lg:py-28 bg-primary-500 bg-opacity-90 flex justify-center items-start">
+                <div id="session-booking-model" class="w-full lg:w-9/12 xl:w-7/12 max-w-6xl h-full lg:h-fit lg:rounded-lg shadow p-3 flex flex-col md:flex-row justify-between bg-secondary-500 divide-y-2 md:divide-y-0 divide-primary-500 divide-opacity-60 py-5">
+                    <!--  Date picker-->
+                    <div id="session-modal-date-picker" class="w-full md:w-8/12 h-full py-8 md:p-5 md:pr-7 flex flex-col">
+                        <!-- session booking header -->
+                        <div id="model-header" class="p-1 flex justify-around items-center">
+                            <!-- previouse month -->
+                            <button id="session-previouse-month" class="w-fit h-fit text-opacity-80 hover:text-opacity-95 bg-primary-500 bg-opacity-5 hover:bg-opacity-10 rounded-full hover:rounded-xl text-primary-500 transition-al duration-75 ease-linear cursor-pointer" type="button">
+                                <svg class="w-7 md:w-9" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                                </svg>
+                            </button>
+                        
+                            <!-- current month and date -->
+                            <div class="w-full h-fit flex flex-col justify-center items-center">
+                                <!-- current month -->
+                                <p id="current-month" class="font-heading text-lg md:text-xl font-medium text-primary-500 text-opacity-90">
+                                </p>
+                                <!-- current date -->
+                                <p id="selected-date" class="font-heading text-xs md:text-base font-medium text-primary-500 text-opacity-75">
+                                </p>
+                            </div>
+
+                            <!-- next month -->
+                            <button id="session-next-month" class="w-fit h-fit text-opacity-80 hover:text-opacity-95 bg-primary-500 bg-opacity-5 hover:bg-opacity-10 rounded-full hover:rounded-xl text-primary-500 transition-al duration-75 ease-linear cursor-pointer" type="button">
+                                <svg class="w-7 md:w-9" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- divider -->
+                        <div class="w-full h-[1.5px] bg-primary-500 bg-opacity-30 rounded-md my-2">
+                        </div>
+
+                        <!--  session booking date -->
+                        <div id="modal-week-days" class="w-full h-full">
+                            <ul id="modal-weeks">
+                                <li>Mon</li>
+                                <li>Tues</li>
+                                <li>Wed</li>
+                                <li>Thurs</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                                <li>Sun</li>
+                            </ul>
+
+                            <ul id="modal-days">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- divider -->
+                    <div class="w-[2px] h-xl bg-primary-500 bg-opacity-30 rounded-md my-2 hidden md:block">
                     </div>
                     
-                    <!-- button that edit the session dashboard data -->
-                    <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto flex">
-                        <!-- add session btn -->
-                        <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
-                            <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
-                            </svg>Book
-                        </button>
+                    <!-- time picker -->
+                    <div id="session-time-picker" class="w-full md:w-4/12 h-full py-5 md:p-5 flex flex-col">
+                        <!-- heading -->
+                        <h2 class="font-heading text-primary-500 text-opacity-80 tracking-tight font-medium text-xl text-center md:text-left">
+                            Available times:
+                        </h2>
 
-                        <!-- remove session btn -->
-                        <button class="hidden flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-md w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
-                            <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M5 13v-2h14v2Z"/>
-                            </svg>Unbook
-                        </button>
-                    </div>
-                </div>
+                        <!-- available times  -->
+                        <form action="" id="session-available-time-picker" class="flex flex-col w-full h-full mt-6 gap-20">
+                            <div class="flex flex-col w-full h-full gap-6 px-8 md:px-0">
+                                <input type="checkbox" name="session-avaible-time" id="8AM" class="hidden peer/8AM_checkbox">
+                                <label for="8AM" id="session-time-label-1" class="peer/8AM transition-all duration-75 ease-linear flex gap-7 lg:gap-10 justify-center items-center text-base md:text-sm lg:text-base text-primary-500 text-opacity-75 hover:text-opacity-80 hover:shadow-md font-body font-medium w-full h-fit rounded-md hover:rounded-none border-2 hover:border-[3px] hover:border-opacity-80 border-primary-500 p-2 peer-checked/8AM_checkbox:border-positive peer-checked/8AM_checkbox:border-2 peer-checked/8AM_checkbox:hover:border-[3px] peer-checked/8AM_checkbox:hover:border-opacity-80 peer-checked/8AM_checkbox:shadow-md peer-checked/8AM_checkbox:text-opacity-90 peer-checked/8AM_checkbox:text-positive cursor-pointer">
+                                    <p>08:00 AM</p>
+                                    <p>~</p>
+                                    <p>11:00 AM</p>
+                                </label>
 
-                <!-- empty state -->
-                <div id="empty_state" class="hidden w-full h-full tracking-tighter mt-5 md:mt-20 col-span-full space-y-5 md:space-y-8">
-                    <p class="text-2xl md:text-4xl font-heading text-primary-500 font-medium text-opacity-60 text-center">
-                        No training sessions booked
-                    </p>
-                    <img src="./assets/svg/empty_booking_state.svg" class="block mx-auto w-6/12 md:w-fit opacity-90" alt="illustration of an empty gym">
-                    <p class="text-primary-500 font-heading font-medium md:text-2xl text-center text-opacity-40">
-                        Click on the <span class="inline-flex items-center justify-center text-tertiary-600 opacity-75 transition-all duration-150 ease-linear pr-[0.2rem] md:p-[0.2rem] md:py-[0.01rem] md:pl-0 text-sm md:text-base w-fit rounded font-medium font-heading border-[3px] border-tertiary-600">
-                            <svg class="w-4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
-                            </svg>Book</span> button to get started.
-                    </p>
-                </div>
+                                <input type="checkbox" name="session-avaible-time" id="10AM" class="hidden peer/10AM_checkbox">
+                                <label for="10AM" id="session-time-label-1" class="peer/10AM transition-all duration-75 ease-linear flex gap-7 lg:gap-10 justify-center items-center text-base md:text-sm lg:text-base text-primary-500 text-opacity-75 hover:text-opacity-80 hover:shadow-md font-body font-medium w-full h-fit rounded-md hover:rounded-none border-2 hover:border-[3px] hover:border-opacity-80 border-primary-500 p-2 peer-checked/10AM_checkbox:border-positive peer-checked/10AM_checkbox:border-2 peer-checked/10AM_checkbox:hover:border-[3px] peer-checked/10AM_checkbox:hover:border-opacity-80 peer-checked/10AM_checkbox:shadow-md peer-checked/10AM_checkbox:text-opacity-90 peer-checked/10AM_checkbox:text-positive cursor-pointer">
+                                    <p>10:00 AM</p>
+                                    <p>~</p>
+                                    <p>12:00 PM</p>
+                                </label>
 
-                <!-- session manager dashbaord data -->
-                <div id="session-dashboard-data" class="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 p-2">
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
+                                <input type="checkbox" name="session-avaible-time" id="15AM" class="hidden peer/15AM_checkbox">
+                                <label for="15AM" id="session-time-label-1" class="peer/15AM transition-all duration-75 ease-linear flex gap-7 lg:gap-10 justify-center items-center text-base md:text-sm lg:text-base text-primary-500 text-opacity-75 hover:text-opacity-80 hover:shadow-md font-body font-medium w-full h-fit rounded-md hover:rounded-none border-2 hover:border-[3px] hover:border-opacity-80 border-primary-500 p-2 peer-checked/15AM_checkbox:border-positive peer-checked/15AM_checkbox:border-2 peer-checked/15AM_checkbox:hover:border-[3px] peer-checked/15AM_checkbox:hover:border-opacity-80 peer-checked/15AM_checkbox:shadow-md peer-checked/15AM_checkbox:text-opacity-90 peer-checked/15AM_checkbox:text-positive cursor-pointer">
+                                    <p>15:00 PM</p>
+                                    <p>~</p>
+                                    <p>17:00 PM</p>
+                                </label>
+                            </div>
+                            
+                            <!-- action button -->
+                            <div class="flex justify-between items-center">
+                                <!-- cancel btn -->
+                                <button id="cancel_time_picker" class="w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize rounded hover:rounded-none text-primary-500 hover:text-secondary-500 text-opacity-75 border-[3px] border-primary-500 border-opacity-80 hover:drop-shadow-lg hover:bg-primary-500 hover:bg-opacity-80 transition-all duration-75 ease-linear">
+                                    cancel
+                                </button>
 
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="session-item" class="w-full h-fit relative pl-10 p-5 rounded-md bg-secondary-600 bg-opacity-20 flex items-center justify-between hover:drop-shadow-md">
-                        <!-- Session indicator -->
-                        <div id="session-indicator" class="w-4 h-4 rounded-full absolute left-3 top-3 bg-secondary-200">
-                        </div>
-
-                        <!-- Session date -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-center">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Session Date:
-                            </p>
-                            <p class="font-body font-bold text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                12 Oct 22
-                            </p>
-                        </div>
-
-                        <!-- Session time -->
-                        <div id="session-date" class="w-fit h-fit flex flex-col justify-end">
-                            <p class="font-heading font-medium tracking-tight text-primary-500 text-opacity-60 text-sm md:text-md lg:text-lg">
-                                Start Time:
-                            </p>
-                            <p class="font-body font-bold tracking-tight text-primary-500 text-opacity-70 text-3xl lg:text-4xl">
-                                13:05
-                            </p>
-                        </div>
+                                <!-- submit btn -->
+                                <button type="submit" class="w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize text-tertiary-500 text-opacity-80 hover:text-secondary-100 hover:bg-tertiary-500 hover:text-opacity-90 hover:drop-shadow-lg rounded hover:rounded-none outline outline-tertiary-500 transition-all duration-75 ease-linear">
+                                    Book
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <!-- footer -->
+        <footer class="bg-primary-500 opacity-95 w-full h-fit">
+            <div class=" xl:w-3/4 mx-auto px-8 pt-5">
+                <!-- footer content -->
+                <div class="flex gap-12 w-full md:gap-3 md:p-3 flex-col md:flex-row justify-center items-center">
+                    <!-- Catch phrase -->
+                    <div class="lg:mr-12 w-60 max-w-2xl md:w-full h-full order-2 md:order-none">
+                        <img class="opacity-80 w-full h-full font-Bungee" src="./assets/svg/getfitwithmike.svg" alt="get fit with mike svg">
+                    </div>
+
+                    <!-- email form -->
+                    <div class="p-1 w-full max-w-xl md:w-2/3 h-fit shrink md:border-r-4 md:pr-4 border-secondary-500 border-opacity-75 order-3 md:order-none">
+                        <form action="" id="email-form" class="form flex flex-col gap-3 justify-between items-center">
+                            <div class="flex gap-3 flex-col lg:flex-row w-full">
+                                <!--- name -->
+                                <input required autocomplete ="on" type="text" name="name" id="email-name" placeholder="Name" class="transition-all duration-75 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9">
         
-    </main>
+                                <!-- phone number -->
+                                <input required autocomplete ="on" type="tel" name="phonenumber" id="email-phonenumber" placeholder="Phone Number" class="transition-all duration-75 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
+                            </div>
 
-    <!-- footer -->
-    <footer class="bg-primary-500 opacity-95 w-screen h-fit">
-        <div class=" xl:w-3/4 mx-auto px-8 pt-5">
-            <!-- footer content -->
-            <div class="flex gap-12 w-full md:gap-3 md:p-3 flex-col md:flex-row justify-center items-center">
-                <!-- Catch phrase -->
-                <div class="lg:mr-12 w-60 max-w-2xl md:w-full h-full order-2 md:order-none">
-                    <img class="opacity-80 w-full h-full font-Bungee" src="./assets/svg/getfitwithmike.svg" alt="get fit with mike svg">
+                            <!-- email -->
+                            <input required autocomplete ="on" type="email" name="email" id="email-email" placeholder="Email" class="transition-all duration-75 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
+
+                            <!-- message -->
+                            <textarea required name="message" id="email-message" placeholder="Message" class="transition-all duration-75 ease-linear flex items-center form-textarea bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-16 lg:h-28 resize-none peer"></textarea>
+
+                            <!-- send btn -->
+                            <input id="email-submit" class="transition-all duration-75 ease-linear text-sm lg:text-base text-primary-500 opacity-80 hover:opacity-95 bg-secondary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 shadow ml-auto rounded lg:rounded-md font-heading font-medium cursor-pointer" type="submit" value="Send">
+                        </form>
+                    </div>
+
+                    <!-- Contact detail -->
+                    <div class="space-y-5 w-fit pb-8 md:pb-1 p-1 font-body shrink order-1 md:order-none border-b-4 md:border-b-0 border-secondary-500 border-opacity-75">
+                        <!-- instagram link -->
+                        <p>
+                            <a href="" class="transition-all duration-75 ease-linear flex items-center w-fit text-lg md:text-base lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                                <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+                                    <path fill="currentColor" d="M160 128a32 32 0 1 1-32-32a32.1 32.1 0 0 1 32 32Zm68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56Zm-52 44a48 48 0 1 0-48 48a48 48 0 0 0 48-48Zm16-52a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z"/>
+                                </svg>
+                                The_Real_Mike_Trainer
+                            </a>
+                        </p>
+
+                        <!-- twitter link -->
+                        <p>
+                            <a href="" class="transition-all duration-75 ease-linear flex items-center w-fit text-lg md:text-base lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                                <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/>
+                                </svg>
+                                Mike_Trainer
+                            </a>
+                        </p>
+
+                        <!-- tiktok link -->
+                        <p>
+                            <a href="" class="transition-all duration-75 ease-linear flex items-center w-fit text-lg md:text-base lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                                <svg class="w-6 inline"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+                                </svg>
+                                Get_Fit_with_Mike
+                            </a>
+                        </p>
+
+                        <!-- phone link -->
+                        <p>
+                            <a href="" class="transition-all duration-75 ease-linear flex items-center w-fit text-lg md:text-base lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
+                                <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z"/>
+                                </svg>
+                                063 239 9322
+                            </a>
+                        </p>
+                    </div>
                 </div>
 
-                <!-- email form -->
-                <div class="p-1 w-full max-w-xl md:w-2/3 h-fit shrink md:border-r-4 md:pr-4 border-secondary-500 border-opacity-75 order-3 md:order-none">
-                    <form action="" id="email-form" class="form flex flex-col gap-3 justify-between items-center">
-                        <div class="flex gap-3 flex-col lg:flex-row w-full">
-                            <!--- name -->
-                            <input required autocomplete ="on" type="text" name="name" id="email-name" placeholder="Name" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9">
-    
-                            <!-- phone number -->
-                            <input required autocomplete ="on" type="tel" name="phonenumber" id="email-phonenumber" placeholder="Phone Number" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
-                        </div>
-
-                        <!-- email -->
-                        <input required autocomplete ="on" type="email" name="email" id="email-email" placeholder="Email" class="transition-all duration-100 ease-linear flex items-center form-input bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-11 md:h-9 invalid:border-negative invalid:text-negative focus:invalid:ring-negative focus:invalid:border-negative">
-
-                        <!-- message -->
-                        <textarea required name="message" id="email-message" placeholder="Message" class="transition-all duration-100 ease-linear flex items-center form-textarea bg-primary-400 opacity-80 rounded text-secondary-500 pl-3 p-1 text-sm placeholder-secondary-500 placeholder-opacity-70 font-body tracking-wider ring-0 outline-0 focus:border border-secondary-500 placeholder:italic autofill:bg-transparent w-full h-16 lg:h-28 resize-none peer"></textarea>
-
-                        <!-- send btn -->
-                        <input id="email-submit" class="transition-all duration-100 ease-linear text-sm lg:text-base text-primary-500 opacity-80 hover:opacity-95 bg-secondary-500 p-[0.15rem] lg:p-1 px-4 lg:px-7 shadow ml-auto rounded lg:rounded-md font-heading font-medium" type="submit" value="Send">
-                    </form>
-                </div>
-
-                <!-- Contact detail -->
-                <div class="space-y-5 w-fit pb-8 md:pb-1 p-1 font-body shrink order-1 md:order-none border-b-4 md:border-b-0 border-secondary-500 border-opacity-75">
-                    <!-- instagram link -->
-                    <p>
-                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
-                            <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                                <path fill="currentColor" d="M160 128a32 32 0 1 1-32-32a32.1 32.1 0 0 1 32 32Zm68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56Zm-52 44a48 48 0 1 0-48 48a48 48 0 0 0 48-48Zm16-52a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z"/>
-                            </svg>
-                            The_Real_Mike_Trainer
-                        </a>
-                    </p>
-
-                    <!-- twitter link -->
-                    <p>
-                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
-                            <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/>
-                            </svg>
-                            Mike_Trainer
-                        </a>
-                    </p>
-
-                    <!-- tiktok link -->
-                    <p>
-                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
-                            <svg class="w-6 inline"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
-                            </svg>
-                            Get_Fit_with_Mike
-                        </a>
-                    </p>
-
-                    <!-- phone link -->
-                    <p>
-                        <a href="" class="transition-all duration-100 ease-linear flex items-center w-fit text-lg md:text-md lg:text-base gap-2 opacity-60 hover:opacity-100 text-secondary-200 hover:text-secondary-500 tracking-wider text-center">
-                            <svg class="inline w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z"/>
-                            </svg>
-                            063 239 9322
-                        </a>
-                    </p>
+                <!-- footer reserved rights -->
+                <div class="font-body text-center text-secondary-300 opacity-80 py-4">
+                    &copy All Rights Reserved 2023
                 </div>
             </div>
+        </footer>
 
-            <!-- footer reserved rights -->
-            <div class="font-body text-center text-secondary-300 opacity-80 py-4">
-                &copy All Rights Reserved 2023
-            </div>
-        </div>
-    </footer>
-</body>
+        <!-- importing jquery -->
+        <script src="./js/jquery/jquery-3.6.1.min.js"></script>
+        
+        <!-- adding the custom nav btn -->
+        <script src="./js/custom/nav_btn.js"></script>
+        
+        <!-- Iconify -->
+        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+        
+        <!-- adding the session modal datepicker js -->
+        <script src="./js/custom/session_modal_datepicker.js"></script>
+
+    </body>
 
 </html>
+TODO::Add regex to appropriate input fields
