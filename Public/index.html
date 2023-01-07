@@ -201,35 +201,29 @@
                             <input id="comlpeted" type="radio" name="sliderHelper" class="peer/checkbox_completed">
 
                             <label for="upcomming"class="w-full md:w-fit peer/upcomming order-1 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-l-lg border-r-0 hover:border-r-2 peer-checked/checkbox_upcomming:text-secondary-500 peer-checked/checkbox_upcomming:text-opacity-80 peer-checked/checkbox_upcomming:bg-primary-500 peer-checked/checkbox_upcomming:bg-opacity-90 cursor-pointer">
-                                <button>
-                                    Upcomming
-                                </button>
+                                Upcomming
                             </label>
 
                             <label for="outstanding" class="w-full md:w-fit peer/outstanding order-3 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear rounded-r-lg border-l-0 hover:border-l-2 peer-checked/checkbox_outstanding:text-secondary-500 peer-checked/checkbox_outstanding:text-opacity-80 peer-checked/checkbox_outstanding:bg-primary-500 peer-checked/checkbox_outstanding:bg-opacity-90 cursor-pointer">
-                                <button>
-                                    Outstanding
-                                </button>               
+                                Outstanding             
                             </label>
                             
                             <label for="comlpeted" class="w-full md:w-fit peer-hover/upcomming:border-l-0 peer-hover/outstanding:border-r-0 order-2 p-3 px-2 lg:px-5 font-heading text-sm lg:text-base text-center align-middle font-medium text-opacity-40 tracking-tight text-primary-500 capitalize border-2 border-primary-500 border-opacity-40 hover:border-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 hover:text-secondary-500 transition-all ease-linear peer-checked/checkbox_completed:text-secondary-500 peer-checked/checkbox_completed:text-opacity-80 peer-checked/checkbox_completed:bg-primary-500 peer-checked/checkbox_completed:bg-opacity-90 cursor-pointer">
-                                <button>
-                                    Completed
-                                </button>
+                                Completed
                             </label>
                         </div>
                         
                         <!-- button that edit the session dashboard data -->
                         <div id="session-dashboard-data-handlers" class="w-fit h-fit ml-auto flex">
                             <!-- add session btn -->
-                            <button class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                            <button id="open-booking-modal" class="flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="button" onclick="Calendar.openSessionBookingModal()">
                                 <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
                                 </svg>Book
                             </button>
 
                             <!-- remove session btn -->
-                            <button class="hidden flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="" type="button">
+                            <button id="rmv-booked-sessions" class="hidden flex items-center justify-center text-tertiary-500 transition-all duration-150 ease-linear opacity-80 hover:opacity-100 p-[0.2rem] pl-0 text-base w-fit rounded hover:rounded-none font-medium font-heading border-[3px] border-tertiary-500 hover:bg-tertiary-500 hover:text-secondary-500" role="button">
                                 <svg class="w-6" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M5 13v-2h14v2Z"/>
                                 </svg>Unbook
@@ -465,31 +459,28 @@
             </div>
 
             <!--Session booking -->
-            <div id="session-booking-screen" class="w-full h-full lg:py-28 bg-primary-500 bg-opacity-90 flex justify-center items-start">
-                <div id="session-booking-model" class="w-full lg:w-9/12 xl:w-7/12 max-w-6xl h-full lg:h-fit lg:rounded-lg shadow p-3 flex flex-col md:flex-row justify-between bg-secondary-500 divide-y-2 md:divide-y-0 divide-primary-500 divide-opacity-60 py-5">
+            <div id="session-booking-screen" class="lg:py-28 bg-primary-500 bg-opacity-90 flex justify-center items-start">
+                <div id="session-booking-modal" class="w-full lg:w-9/12 xl:w-7/12 max-w-6xl h-full lg:h-fit lg:rounded-lg shadow p-3 flex flex-col md:flex-row justify-between bg-secondary-500 divide-y-2 md:divide-y-0 divide-primary-500 divide-opacity-60 py-5">
                     <!--  Date picker-->
-                    <div id="session-modal-date-picker" class="w-full md:w-8/12 h-full py-8 md:p-5 md:pr-7 flex flex-col">
+                    <div id="session-modal-date-picker" class="w-full md:w-7/12 h-full py-8 md:p-5 md:pr-7 flex flex-col">
                         <!-- session booking header -->
-                        <div id="model-header" class="p-1 flex justify-around items-center">
+                        <div id="modal-header" class="p-1 flex justify-around items-center">
                             <!-- previouse month -->
-                            <button id="session-previouse-month" class="w-fit h-fit text-opacity-80 hover:text-opacity-95 bg-primary-500 bg-opacity-5 hover:bg-opacity-10 rounded-full hover:rounded-xl text-primary-500 transition-al duration-75 ease-linear cursor-pointer" type="button">
+                            <button id="session-previouse-month" class="sessionMonthChanger">
                                 <svg class="w-7 md:w-9" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
                                 </svg>
                             </button>
                         
                             <!-- current month and date -->
-                            <div class="w-full h-fit flex flex-col justify-center items-center">
+                            <div class="w-full h-fit flex flex-col justify-center items-center cursor-pointer">
                                 <!-- current month -->
-                                <p id="current-month" class="font-heading text-lg md:text-xl font-medium text-primary-500 text-opacity-90">
-                                </p>
-                                <!-- current date -->
-                                <p id="selected-date" class="font-heading text-xs md:text-base font-medium text-primary-500 text-opacity-75">
+                                <p id="current-monthYear" class="font-heading text-lg md:text-xl font-medium text-primary-500 text-opacity-90">
                                 </p>
                             </div>
 
                             <!-- next month -->
-                            <button id="session-next-month" class="w-fit h-fit text-opacity-80 hover:text-opacity-95 bg-primary-500 bg-opacity-5 hover:bg-opacity-10 rounded-full hover:rounded-xl text-primary-500 transition-al duration-75 ease-linear cursor-pointer" type="button">
+                            <button id="session-next-month" class="sessionMonthChanger">
                                 <svg class="w-7 md:w-9" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z"/>
                                 </svg>
@@ -503,13 +494,13 @@
                         <!--  session booking date -->
                         <div id="modal-week-days" class="w-full h-full">
                             <ul id="modal-weeks">
+                                <li>Sun</li>
                                 <li>Mon</li>
                                 <li>Tues</li>
                                 <li>Wed</li>
                                 <li>Thurs</li>
                                 <li>Fri</li>
                                 <li>Sat</li>
-                                <li>Sun</li>
                             </ul>
 
                             <ul id="modal-days">
@@ -522,15 +513,21 @@
                     </div>
                     
                     <!-- time picker -->
-                    <div id="session-time-picker" class="w-full md:w-4/12 h-full py-5 md:p-5 flex flex-col">
+                    <div id="session-modal-time-picker" class="w-full md:w-5/12 h-full py-5 md:p-5 flex flex-col">
                         <!-- heading -->
-                        <h2 class="font-heading text-primary-500 text-opacity-80 tracking-tight font-medium text-xl text-center md:text-left">
-                            Available times:
-                        </h2>
+                        <div class="flex gap-2 items-center justify-center md:justify-start">
+                           <h2 class="font-heading text-primary-500 text-opacity-90 tracking-tight font-medium text-base lg:text-xl text-center md:text-left">
+                                Available times:
+                            </h2>
+                            <!-- selected date -->
+                            <p id="selected-date" class="font-heading text-sm md:text-base font-medium text-primary-500 text-opacity-75">
+                            </p>
+                        </div>
+                        
 
                         <!-- available times  -->
-                        <form action="" id="session-available-time-picker" class="flex flex-col w-full h-full mt-6 gap-20">
-                            <div class="flex flex-col w-full h-full gap-6 px-8 md:px-0">
+                        <form action="" id="session-available-time-picker" class="flex flex-col w-full h-full mt-6 gap-20" onchange="Calendar.__muteSubmitSessionBtn()">
+                            <div class="flex flex-col w-full h-full gap-6 px-8 md:px-5" id="available-session-time-options">
                                 <input type="checkbox" name="session-avaible-time" id="8AM" class="hidden peer/8AM_checkbox">
                                 <label for="8AM" id="session-time-label-1" class="peer/8AM transition-all duration-75 ease-linear flex gap-7 lg:gap-10 justify-center items-center text-base md:text-sm lg:text-base text-primary-500 text-opacity-75 hover:text-opacity-80 hover:shadow-md font-body font-medium w-full h-fit rounded-md hover:rounded-none border-2 hover:border-[3px] hover:border-opacity-80 border-primary-500 p-2 peer-checked/8AM_checkbox:border-positive peer-checked/8AM_checkbox:border-2 peer-checked/8AM_checkbox:hover:border-[3px] peer-checked/8AM_checkbox:hover:border-opacity-80 peer-checked/8AM_checkbox:shadow-md peer-checked/8AM_checkbox:text-opacity-90 peer-checked/8AM_checkbox:text-positive cursor-pointer">
                                     <p>08:00 AM</p>
@@ -556,12 +553,13 @@
                             <!-- action button -->
                             <div class="flex justify-between items-center">
                                 <!-- cancel btn -->
-                                <button id="cancel_time_picker" class="w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize rounded hover:rounded-none text-primary-500 hover:text-secondary-500 text-opacity-75 border-[3px] border-primary-500 border-opacity-80 hover:drop-shadow-lg hover:bg-primary-500 hover:bg-opacity-80 transition-all duration-75 ease-linear">
+                                <button id="cancel-session-booking" class="w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize rounded hover:rounded-none text-primary-500 hover:text-secondary-500 text-opacity-75 border-[3px] border-primary-500 border-opacity-80 hover:drop-shadow-lg hover:bg-primary-500 hover:bg-opacity-80 transition-all duration-75 ease-linear">
                                     cancel
                                 </button>
 
                                 <!-- submit btn -->
-                                <button type="submit" class="w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize text-tertiary-500 text-opacity-80 hover:text-secondary-100 hover:bg-tertiary-500 hover:text-opacity-90 hover:drop-shadow-lg rounded hover:rounded-none outline outline-tertiary-500 transition-all duration-75 ease-linear">
+                                <!-- TODO:: add tooltip that will tell the user to select a time before clicking submit -->
+                                <button disabled id="submit-session-booking" type="submit" class=" w-5/12 p-1 px-3 font-heading font-medium tracking-tight capitalize text-tertiary-500 text-opacity-80 hover:text-secondary-100 hover:bg-tertiary-500 hover:text-opacity-90 hover:drop-shadow-lg rounded hover:rounded-none outline outline-tertiary-500 transition-all duration-75 ease-linear disabled:outline-zinc-400 disabled:text-zinc-400 disabled:hover:bg-transparent disabled:hover:text-zinc-400 disabled:hover:rounded disabled:hover:drop-shadow-none">
                                     Book
                                 </button>
                             </div>
@@ -665,6 +663,10 @@
         
         <!-- adding the session modal datepicker js -->
         <script src="./js/custom/session_modal_datepicker.js"></script>
+        <script>
+            let Calendar = new SessionCalendar("TODO:: sessionRulesdb");
+            Calendar.load();
+        </script>
 
     </body>
 

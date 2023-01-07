@@ -977,10 +977,6 @@ video {
   --tw-bg-opacity: 0.9;
 }
 
-.bg-opacity-5{
-  --tw-bg-opacity: 0.05;
-}
-
 .bg-opacity-30{
   --tw-bg-opacity: 0.3;
 }
@@ -1133,16 +1129,6 @@ video {
 
 .text-lg{
   font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.text-xl{
-  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -1402,6 +1388,40 @@ form .invalid-input{
 
 /* Session date picker */
 
+#session-modal-date-picker #modal-header button{
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: rgb(25 25 25 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.05;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+  --tw-text-opacity: 0.8;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 75ms;
+  transition-timing-function: linear;
+}
+
+#session-modal-date-picker #modal-header button:hover{
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 0.1;
+  --tw-text-opacity: 0.95;
+}
+
+#session-modal-date-picker #modal-header button:disabled{
+  cursor: auto;
+  --tw-text-opacity: 0.4;
+}
+
+#session-modal-date-picker #modal-header button:hover:disabled{
+  border-radius: 9999px;
+  --tw-bg-opacity: 0.05;
+  --tw-text-opacity: 0.4;
+}
+
 #modal-week-days ul{
   display: flex;
   list-style-type: none;
@@ -1445,6 +1465,7 @@ form .invalid-input{
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
+  line-height: 2;
   color: rgb(25 25 25 / var(--tw-text-opacity));
   --tw-text-opacity: 0.75;
 }
@@ -1454,8 +1475,8 @@ form .invalid-input{
   left: 50%;
   top: 50%;
   z-index: -1;
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
   --tw-translate-x: -50%;
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1490,6 +1511,12 @@ form .invalid-input{
     line-height: 1.25rem;
     --tw-text-opacity: 0.9;
   }
+
+  #modal-week-days #modal-days li::before{
+    height: 2.25rem;
+    content: var(--tw-content);
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1280px){
@@ -1500,6 +1527,7 @@ form .invalid-input{
 }
 
 #modal-week-days #modal-days .inactive{
+  cursor: default;
   font-weight: 400;
   --tw-text-opacity: 0.5;
 }
@@ -1508,6 +1536,7 @@ form .invalid-input{
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-text-opacity: 0.5;
 }
 
 #modal-week-days #modal-days .inactive:hover::before{
@@ -1518,7 +1547,28 @@ form .invalid-input{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+#modal-week-days #modal-days .leaking-date{
+  font-weight: 400;
+  --tw-text-opacity: 0.5;
+}
+
+#modal-week-days #modal-days .leaking-date:hover{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#modal-week-days #modal-days .leaking-date:hover::before{
+  background-color: transparent;
+  content: var(--tw-content);
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 #modal-week-days #modal-days .fully-booked{
+  cursor: default;
+  font-weight: 500;
   --tw-text-opacity: 0.7;
 }
 
@@ -1526,8 +1576,8 @@ form .invalid-input{
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
   border-radius: 9999px;
   background-color: rgb(3 206 164 / var(--tw-bg-opacity));
   content: var(--tw-content);
@@ -1538,7 +1588,7 @@ form .invalid-input{
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  cursor: default;
+  --tw-text-opacity: 0.7;
 }
 
 #modal-week-days #modal-days .fully-booked:hover::before{
@@ -1550,20 +1600,12 @@ form .invalid-input{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-#modal-week-days #modal-days .selected::before{
-  border-width: 0.2rem;
-  content: var(--tw-content);
-  --tw-border-opacity: 1;
-  border-color: rgb(208 7 7 / var(--tw-border-opacity));
-}
-
-#modal-week-days #modal-days .selected:hover::before{
-  background-color: transparent;
-  --tw-bg-opacity: 1;
-  content: var(--tw-content);
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+@media (min-width: 768px){
+  #modal-week-days #modal-days .fully-booked::before{
+    height: 2.25rem;
+    content: var(--tw-content);
+    width: 2.25rem;
+  }
 }
 
 #modal-week-days #modal-days .today{
@@ -1580,6 +1622,33 @@ form .invalid-input{
   #modal-week-days #modal-days .today{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+#modal-week-days #modal-days .selected{
+  text-decoration-line: none;
+}
+
+#modal-week-days #modal-days .selected::before{
+  border-width: 0.1rem;
+  content: var(--tw-content);
+  --tw-border-opacity: 1;
+  border-color: rgb(208 7 7 / var(--tw-border-opacity));
+}
+
+#modal-week-days #modal-days .selected:hover::before{
+  background-color: transparent;
+  --tw-bg-opacity: 1;
+  content: var(--tw-content);
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 768px){
+  #modal-week-days #modal-days .selected::before{
+    content: var(--tw-content);
+    border-width: 0.2rem;
   }
 }
 
@@ -1619,24 +1688,8 @@ form .invalid-input{
   border-radius: 0px;
 }
 
-.hover\:rounded-xl:hover{
-  border-radius: 0.75rem;
-}
-
-.hover\:border-4:hover{
-  border-width: 4px;
-}
-
 .hover\:border-\[3px\]:hover{
   border-width: 3px;
-}
-
-.hover\:border:hover{
-  border-width: 1px;
-}
-
-.hover\:border-0:hover{
-  border-width: 0px;
 }
 
 .hover\:border-r-2:hover{
@@ -1652,16 +1705,8 @@ form .invalid-input{
   border-color: rgb(236 236 236 / var(--tw-border-opacity));
 }
 
-.hover\:border-\[\]:hover{
-  border-color: ;
-}
-
 .hover\:border-opacity-60:hover{
   --tw-border-opacity: 0.6;
-}
-
-.hover\:border-opacity-75:hover{
-  --tw-border-opacity: 0.75;
 }
 
 .hover\:border-opacity-80:hover{
@@ -1687,10 +1732,6 @@ form .invalid-input{
   --tw-bg-opacity: 0.6;
 }
 
-.hover\:bg-opacity-10:hover{
-  --tw-bg-opacity: 0.1;
-}
-
 .hover\:bg-opacity-80:hover{
   --tw-bg-opacity: 0.8;
 }
@@ -1714,20 +1755,12 @@ form .invalid-input{
   color: rgb(251 251 251 / var(--tw-text-opacity));
 }
 
-.hover\:text-opacity-95:hover{
-  --tw-text-opacity: 0.95;
-}
-
 .hover\:text-opacity-80:hover{
   --tw-text-opacity: 0.8;
 }
 
 .hover\:text-opacity-90:hover{
   --tw-text-opacity: 0.9;
-}
-
-.hover\:text-opacity-0:hover{
-  --tw-text-opacity: 0;
 }
 
 .hover\:no-underline:hover{
@@ -1752,10 +1785,6 @@ form .invalid-input{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:outline:hover{
-  outline-style: solid;
 }
 
 .hover\:drop-shadow-lg:hover{
@@ -1793,6 +1822,33 @@ form .invalid-input{
 .focus\:invalid\:ring-negative:invalid:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(245 41 41 / var(--tw-ring-opacity));
+}
+
+.disabled\:text-zinc-400:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity));
+}
+
+.disabled\:outline-zinc-400:disabled{
+  outline-color: #a1a1aa;
+}
+
+.disabled\:hover\:rounded:hover:disabled{
+  border-radius: 0.25rem;
+}
+
+.disabled\:hover\:bg-transparent:hover:disabled{
+  background-color: transparent;
+}
+
+.disabled\:hover\:text-zinc-400:hover:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity));
+}
+
+.disabled\:hover\:drop-shadow-none:hover:disabled{
+  --tw-drop-shadow: drop-shadow(0 0 #0000);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .group:hover .group-hover\:text-opacity-70{
@@ -1911,10 +1967,6 @@ form .invalid-input{
   --tw-text-opacity: 0.9;
 }
 
-.peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:text-opacity-95{
-  --tw-text-opacity: 0.95;
-}
-
 .peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1933,11 +1985,11 @@ form .invalid-input{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.peer\/10AM_checkbox:checked ~ .peer-checked\/10AM_checkbox\:hover\:border-\[3px\]:hover{
+.peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:hover\:border-\[3px\]:hover{
   border-width: 3px;
 }
 
-.peer\/1AM_checkbox:checked ~ .peer-checked\/1AM_checkbox\:hover\:border-\[3px\]:hover{
+.peer\/10AM_checkbox:checked ~ .peer-checked\/10AM_checkbox\:hover\:border-\[3px\]:hover{
   border-width: 3px;
 }
 
@@ -1945,8 +1997,8 @@ form .invalid-input{
   border-width: 3px;
 }
 
-.peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:hover\:border-\[3px\]:hover{
-  border-width: 3px;
+.peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:hover\:border-opacity-80:hover{
+  --tw-border-opacity: 0.8;
 }
 
 .peer\/10AM_checkbox:checked ~ .peer-checked\/10AM_checkbox\:hover\:border-opacity-80:hover{
@@ -1954,10 +2006,6 @@ form .invalid-input{
 }
 
 .peer\/15AM_checkbox:checked ~ .peer-checked\/15AM_checkbox\:hover\:border-opacity-80:hover{
-  --tw-border-opacity: 0.8;
-}
-
-.peer\/8AM_checkbox:checked ~ .peer-checked\/8AM_checkbox\:hover\:border-opacity-80:hover{
   --tw-border-opacity: 0.8;
 }
 
@@ -2077,16 +2125,16 @@ form .invalid-input{
     width: fit-content;
   }
 
-  .md\:w-8\/12{
-    width: 66.666667%;
+  .md\:w-7\/12{
+    width: 58.333333%;
   }
 
   .md\:w-9{
     width: 2.25rem;
   }
 
-  .md\:w-4\/12{
-    width: 33.333333%;
+  .md\:w-5\/12{
+    width: 41.666667%;
   }
 
   .md\:w-full{
@@ -2185,9 +2233,9 @@ form .invalid-input{
     padding-bottom: 0.01rem;
   }
 
-  .md\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
+  .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .md\:pr-0{
@@ -2340,6 +2388,11 @@ form .invalid-input{
   .lg\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .lg\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
